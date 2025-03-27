@@ -1,0 +1,18 @@
+[package]
+name = "ingress-pingora"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.97"
+futures = "0.3.31"
+# Kubernetes APIs on Rust, latest version
+k8s-openapi = { version = "0.24.0", features = ["latest"] }
+# And Kubernetes client for all
+kube = { version = "0.98.0", features = ["client","runtime"] }
+thiserror = "2.0.12"
+# Tokio will be our multh threaded async runtime
+tokio = { version = "1.43.0", features = ["macros", "rt-multi-thread"] }
+# Tracing and tracing-subscriber are responsible for the logging
+tracing = "0.1.41"
+tracing-subscriber = { version = "0.3.19", features = ["fmt"] }
